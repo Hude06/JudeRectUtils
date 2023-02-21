@@ -1,6 +1,6 @@
 {
   "name": "@hude063/rectclass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rect Class With a intersects Function",
   "main": "Case.js",
   "scripts": {
