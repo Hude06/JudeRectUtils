@@ -2,14 +2,14 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
-class Point {
+export class Point {
 	constructor(val) {
 		this.x = val
 		this.y = val
 	}
 }
 
-class Rect {
+export class Rect {
 	constructor(x,y,w,h) {
 		this.w = w
 		this.h = h
@@ -52,7 +52,7 @@ class Rect {
 		return true;
 	}
 }
-function test_rects() {
+export function test_rects() {
 	let rect = new Rect(25,25,20,20)
 	console.assert(rect.contains(new Point(0,0))==false)
 	//Top

@@ -1,0 +1,19 @@
+{
+  "name": "@hude063/rectclass",
+  "version": "1.0.0",
+  "description": "Rect Class With a intersects Function",
+  "main": "Case.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hude06/JudeRectUtils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hude06/JudeRectUtils/issues"
+  },
+  "homepage": "https://github.com/Hude06/JudeRectUtils#readme"
+}
