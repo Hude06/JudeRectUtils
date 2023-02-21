@@ -1,37 +1,38 @@
 // Setup canvas and refrence ctx
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas')
+const ctx = canvas.getContext('2d')
 
 class Point {
 	constructor(val) {
 		this.x = val
 		this.y = val
-	} 
+	}
 }
+
 class Rect {
-	constructor(x,y,w,h) {	
+	constructor(x,y,w,h) {
 		this.w = w
 		this.h = h
 		this.x = x
-		this.y = y		
+		this.y = y
 	}
 	intersects(rect2) {
-		let TL = new Point(rect1.x,rect1.y);
-		let TR = new Point(rect1.x + rect1.w,rect1.y);
-		let BL = new Point(rect1.x,rect1.y + rect1.h);
-		let BR = new Point(rect1.x + rect1.w,rect1.y + rect1.h);
+		let TL = new Point(this.x,this.y);
+		let TR = new Point(this.x + this.w, this.y);
+		let BL = new Point(this.x,this.y + this.h);
+		let BR = new Point(this.x + this.w, this.y + this.h);
 		if (rect2.contains(TL)) {
-				return true
-			} else if(rect2.contains(TR)) {
-				return true
-			} else if(rect2.contains(BL)) {
-				return true
-			} else if (rect2.contains(BR)) {
-				return true
-			} else {
-				return false
-			}
+			return true
+		} else if(rect2.contains(TR)) {
+			return true
+		} else if(rect2.contains(BL)) {
+			return true
+		} else if (rect2.contains(BR)) {
+			return true
+		} else {
+			return false
 		}
+	}
 	contains(pt) {
 		//No Size
 		if (pt.x == this.x || pt.y == this.y || this.x == pt.x || pt.y == this.y)
@@ -64,16 +65,28 @@ function test_rects() {
 	console.assert(rect.contains(new Point(5,10))==false)
 	//Botom
 	console.assert(rect.contains(new Point(25,60))==false)
+
+	let rect2 = new Rect(30,30,20,20)
+	console.assert(rect.intersects(rect2)==true)
+	console.assert(rect2.intersects(rect)==true)
+	console.log("TESTS PASS")
 }
 
-let rect1 = new Rect(20,20,20,20)
-ctx.strokeRect(20,20,20,20);
-let rect2 = new Rect(80,30,20,20)
-ctx.strokeRect(80,30,20,20);
+// function strokeRect(ctx, rect, color) {
+// 	const sc = 3
+// 	ctx.strokeStyle = color
+// 	ctx.strokeRect(rect.x*sc,rect.y*sc,rect.w*sc,rect.h*sc);
+// }
+// let rect1 = new Rect(70,20,20,20)
+// let rect2 = new Rect(80,30,20,20)
+// strokeRect(ctx,rect1,'red')
+// strokeRect(ctx,rect2, 'green')
 
-if (rect1.intersects(rect2) || rect2.intersects(rect1)) {
-	console.log("INTERSECTED")
-}
+
+// console.log(rect1,rect2, rect1.intersects(rect2))
+// if (rect1.intersects(rect2)) {
+// 	console.log("INTERSECTED")
+// }
 test_rects();
 
 
