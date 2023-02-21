@@ -1,6 +1,15 @@
-// Setup canvas and refrence ctx
-const canvas = document.getElementById('canvas')
-const ctx = canvas.getContext('2d')
+function log(a) {
+	console.log(a)
+}
+function stokeRect(ctx,x,y,w,h,color) {
+	ctx.strokeStyle = color;
+	ctx.stokeRect(x,y,w,h);
+}
+
+function fillRect(ctx,x,y,w,h,color) {
+	ctx.fillStyle = color;
+	ctx.fillRect(x,y,w,h);
+}
 
 export class Point {
 	constructor(val) {
