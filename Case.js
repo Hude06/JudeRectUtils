@@ -71,6 +71,16 @@ function test_rects() {
 	console.assert(rect2.intersects(rect)==true)
 	console.log("TESTS PASS")
 }
+//
+// let ball = new Rect()
+// let planet = new Rect()
+//
+// function tick() {
+// 	ball.x += 1
+// 	if(ball.intersects(planet)) {
+// 		console.log('crashed')
+// 	}
+// }
 
 // function strokeRect(ctx, rect, color) {
 // 	const sc = 3
