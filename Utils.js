@@ -1,12 +1,12 @@
-function log(a) {
+export function log(a) {
 	console.log(a)
 }
-function stokeRect(ctx,x,y,w,h,color) {
+export function stokeRect(ctx,x,y,w,h,color) {
 	ctx.strokeStyle = color;
 	ctx.stokeRect(x,y,w,h);
 }
 
-function fillRect(ctx,x,y,w,h,color) {
+export function fillRect(ctx,x,y,w,h,color) {
 	ctx.fillStyle = color;
 	ctx.fillRect(x,y,w,h);
 }
